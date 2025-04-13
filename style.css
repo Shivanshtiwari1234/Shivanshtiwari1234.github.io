@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.information{
+    margin: 10px;
+    padding: 12px;
+}
+div.information h2.main{
+    font-weight: bold;
+    margin: 7px;
+    text-align: center;
+}
