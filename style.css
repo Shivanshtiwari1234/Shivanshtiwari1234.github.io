@@ -1,14 +1,74 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
-div.information{
-    margin: 10px;
-    padding: 12px;
+
+/* Smooth transition for dark/light mode */
+body, header, nav, section, footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-div.information h2.main{
-    font-weight: bold;
-    margin: 7px;
-    text-align: center;
+
+/* Navbar brand hover */
+nav a.text-2xl {
+  transition: color 0.3s ease;
+}
+nav a.text-2xl:hover {
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+/* Navbar links */
+nav a {
+  transition: color 0.2s ease;
+}
+nav a:hover {
+  color: #3b82f6;
+}
+
+/* Buttons */
+button, a.bg-blue-500 {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:hover, a.bg-blue-500:hover {
+  transform: translateY(-1px);
+}
+
+/* Lesson cards */
+section a.bg-gray-50,
+section a.dark\:bg-gray-800 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+section a.bg-gray-50:hover,
+section a.dark\:bg-gray-800:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Code blocks */
+pre {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  border-left: 4px solid #3b82f6;
+  background-color: #1e293b !important; /* Tailwind slate-800 */
+  color: #a3e635; /* Tailwind lime-400 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+pre:hover {
+  background-color: #0f172a !important; /* Tailwind slate-900 */
+}
+
+/* Contact form inputs */
+input, textarea {
+  transition: border 0.2s ease, background-color 0.2s ease;
+}
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
