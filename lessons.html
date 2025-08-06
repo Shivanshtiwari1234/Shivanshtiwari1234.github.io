@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learn Python</title>
+  <title>Python Lessons</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +23,6 @@
         <button id="menu-btn" class="md:hidden p-2 rounded bg-gray-200 dark:bg-gray-700">☰</button>
       </div>
     </nav>
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-gray-100 dark:bg-gray-800 flex flex-col items-center p-4">
       <a href="index.html" class="py-2">Home</a>
       <a href="lessons.html" class="py-2">Lessons</a>
@@ -31,14 +30,22 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto text-center py-20">
-    <h1 class="text-5xl font-bold mb-6">Master Python Programming</h1>
-    <p class="text-lg mb-8">Learn Python step-by-step with interactive examples and exercises.</p>
-    <a href="lessons.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg">Start Learning</a>
+  <!-- Lessons Grid -->
+  <section class="max-w-6xl mx-auto py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <a href="lesson-template.html" class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg">
+      <h2 class="text-xl font-bold mb-2">Beginner Lessons</h2>
+      <p>Start with Python basics like variables, data types, and loops.</p>
+    </a>
+    <a href="lesson-template.html" class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg">
+      <h2 class="text-xl font-bold mb-2">Intermediate Lessons</h2>
+      <p>Dive deeper with functions, modules, and error handling.</p>
+    </a>
+    <a href="lesson-template.html" class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg">
+      <h2 class="text-xl font-bold mb-2">Advanced Lessons</h2>
+      <p>Learn object-oriented programming and advanced Python tricks.</p>
+    </a>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-gray-100 dark:bg-gray-800 py-4 text-center">
     © 2025 Learn Python. All rights reserved.
   </footer>
