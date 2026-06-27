@@ -1,11 +1,330 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      window.location.href = "http://127.0.0.1:8000";
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ShiviGPT</title>
+
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="//www.youtube.com">
+
+<style>
+:root{
+    --bg:#09090f;
+    --card:#13131c;
+    --border:#262638;
+    --accent:#7c3aed;
+    --accent2:#06b6d4;
+    --text:#ffffff;
+    --muted:#a1a1aa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,#7c3aed22,transparent 35%),
+        radial-gradient(circle at bottom right,#06b6d422,transparent 35%),
+        var(--bg);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:var(--text);
+}
+
+.container{
+    width:min(900px,100%);
+    background:rgba(19,19,28,.95);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.header{
+    padding:24px 30px;
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent2)
+    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.logo h1{
+    font-size:28px;
+}
+
+.logo p{
+    color:var(--muted);
+}
+
+.main{
+    padding:35px;
+}
+
+.hero{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.hero h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.prompt{
+    background:#0f0f17;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:18px;
+}
+
+textarea{
+    width:100%;
+    height:160px;
+    background:transparent;
+    border:none;
+    color:white;
+    resize:none;
+    outline:none;
+    font-size:16px;
+}
+
+.controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+}
+
+#status{
+    color:var(--muted);
+    font-size:14px;
+}
+
+button{
+    border:none;
+    padding:12px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent2)
+    );
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.feature{
+    background:#0f0f17;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:16px;
+}
+
+.feature h3{
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.footer{
+    text-align:center;
+    padding:18px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:13px;
+}
+
+.spinner{
+    display:none;
+    width:18px;
+    height:18px;
+    border:3px solid rgba(255,255,255,.2);
+    border-top-color:white;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">
+            <div class="icon">🤖</div>
+
+            <div>
+                <h1>ShiviGPT</h1>
+                <p>Experimental AI Assistant</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="hero">
+            <h2>Ask Anything</h2>
+            <p>
+                Get instant answers, coding help,
+                ideas, explanations, and more.
+            </p>
+        </div>
+
+        <div class="prompt">
+
+            <textarea
+                id="prompt"
+                placeholder="Ask ShiviGPT anything..."
+            ></textarea>
+
+            <div class="controls">
+
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div class="spinner" id="spinner"></div>
+                    <span id="status">Ready.</span>
+                </div>
+
+                <button id="generateBtn"
+                        onclick="generateAnswer()">
+                    Generate
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <h3>💡 Ideas</h3>
+                <p>Creative brainstorming.</p>
+            </div>
+
+            <div class="feature">
+                <h3>💻 Coding</h3>
+                <p>Programming assistance.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🚀 Fast</h3>
+                <p>Lightning-fast responses.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🧠 AI</h3>
+                <p>Advanced neural processing.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        ShiviGPT Demo
+    </div>
+
+</div>
+
+<script>
+function generateAnswer(){
+
+    const btn = document.getElementById("generateBtn");
+    const status = document.getElementById("status");
+    const spinner = document.getElementById("spinner");
+    const prompt = document.getElementById("prompt");
+
+    btn.disabled = true;
+    prompt.disabled = true;
+    spinner.style.display = "block";
+
+    const messages = [
+        "Analyzing prompt...",
+        "Consulting neural network...",
+        "Generating response...",
+        "Finalizing answer..."
+    ];
+
+    let index = 0;
+
+    status.textContent = messages[0];
+
+    const interval = setInterval(() => {
+
+        index++;
+
+        if(index < messages.length){
+            status.textContent = messages[index];
+        }
+
+    }, 700);
+
+    setTimeout(() => {
+
+        clearInterval(interval);
+
+        window.location.href =
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
+    }, 3000);
+
+}
+</script>
+
+</body>
 </html>
