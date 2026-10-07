@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0f1117">
+    <title>Buildzen Studio Docs</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+</head>
+
+<body class="docs-shell">
+
+    <div class="docs-page">
+
+        <header class="docs-header">
+            <h1>Buildzen Studio Documentation</h1>
+            <p>
+                Buildzen Studio is a lightweight browser-based workspace for building, previewing, and testing
+                HTML, CSS, and JavaScript projects in real time.
+            </p>
+        </header>
+
+        <div class="docs-layout">
+
+            <nav class="docs-nav" aria-label="Documentation navigation">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#files">Files & Assets</a></li>
+                    <li><a href="#editor-docs">Editor</a></li>
+                    <li><a href="#preview-docs">Preview</a></li>
+                    <li><a href="#console-docs">Console</a></li>
+                    <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </nav>
+
+            <main class="docs-content">
+
+                <section id="overview" class="docs-section">
+                    <h2>Overview</h2>
+                    <p>
+                        Buildzen Studio gives you a small coded environment for making front-end experiences without
+                        managing an external toolchain. You can create files, edit them with a code editor, preview the
+                        result in a browser-like panel, and inspect console output while iterating quickly.
+                    </p>
+
+                    <div class="docs-grid">
+                        <div class="docs-card">
+                            <h3>Build fast</h3>
+                            <p>Start from a landing page, portfolio, shop, blog, or SaaS dashboard template.</p>
+                        </div>
+                        <div class="docs-card">
+                            <h3>Preview in context</h3>
+                            <p>Test the site at desktop, tablet, and mobile widths before shipping.</p>
+                        </div>
+                        <div class="docs-card">
+                            <h3>Debug in place</h3>
+                            <p>Watch logs and errors appear in the Studio console as you work.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="getting-started" class="docs-section">
+                    <h2>Getting Started</h2>
+                    <ol>
+                        <li>Choose <strong>Templates</strong> in the top bar and select a starter project, or keep the
+                            default project.</li>
+                        <li>Confirm template selection to replace the current project, then choose a project file from
+                            the left sidebar.</li>
+                        <li>Edit the current file in the code editor.</li>
+                        <li>Use the Refresh button or the keyboard shortcut <code>Ctrl/Cmd + Enter</code> to rebuild the
+                            preview.</li>
+                        <li>Use the saved status indicator to confirm your latest work is recorded.</li>
+                    </ol>
+
+                    <h3>Typical workflow</h3>
+                    <p>
+                        Most projects start with an <code>index.html</code> file, a <code>style.css</code> stylesheet,
+                        and a <code>script.js</code> script. These files are automatically bundled into the live preview
+                        so
+                        you can see the final result as you code.
+                    </p>
+                </section>
+
+                <section id="files" class="docs-section">
+                    <h2>Files & Assets</h2>
+                    <p>
+                        The left sidebar organizes project files and uploaded assets. You can add new files, rename
+                        them,
+                        delete them, and switch between them without leaving the workspace.
+                    </p>
+
+                    <ul>
+                        <li><strong>HTML</strong>: structure and content for your document.</li>
+                        <li><strong>CSS</strong>: styling and responsive layouts.</li>
+                        <li><strong>JavaScript</strong>: interactivity, DOM updates, and client-side logic.</li>
+                        <li><strong>Assets</strong>: upload images, SVG icons, fonts, and supported media into the
+                            project asset library. Select an asset to insert a reference in the current file.</li>
+                        <li>When a font is inserted into a CSS file, Buildzen creates an <code>@font-face</code> rule
+                            using the uploaded filename.</li>
+                    </ul>
+
+                    <h3>Project storage</h3>
+                    <p>
+                        Buildzen persists your project inside browser local storage, so your files remain available when
+                        you reload the Studio. The save indicator shows when the current files are tracked as saved.
+                    </p>
+                </section>
+
+                <section id="editor-docs" class="docs-section">
+                    <h2>Editor</h2>
+                    <p>
+                        The editor uses a CodeMirror-based interface with line numbers, syntax highlighting, bracket
+                        matching, and selection tools to make writing code easier and clearer.
+                    </p>
+
+                    <ul>
+                        <li>Switch files by clicking them in the project tree.</li>
+                        <li>Choose <strong>Split</strong> to open another project file side by side; edits in either
+                            view
+                            stay synchronized.</li>
+                        <li>Use the status bar to see cursor position and current language.</li>
+                        <li>Use search and replace to find patterns rapidly.</li>
+                        <li>Apply document formatting for HTML, CSS, and JavaScript content.</li>
+                        <li>Expand <strong>Blocks</strong> in the sidebar to drag or click-insert starter sections into
+                            the active HTML file.</li>
+                        <li>Expand <strong>Components</strong> to configure section copy, accent color, and spacing
+                            before inserting a reusable section.</li>
+                    </ul>
+
+                    <h3>Auto-save behavior</h3>
+                    <p>
+                        The Studio automatically keeps a working copy of your edits and saves when you pause typing. If
+                        you leave the page while there are pending changes, the app protects against accidental loss.
+                    </p>
+                </section>
+
+                <section id="preview-docs" class="docs-section">
+                    <h2>Preview</h2>
+                    <p>
+                        The preview panel acts like a compact browser testing environment. It re-renders the current
+                        page,
+                        includes responsive device viewports, and supports quick debugging actions.
+                    </p>
+
+                    <h3>Device modes</h3>
+                    <ul>
+                        <li><strong>Desktop</strong>: full-width browser simulation.</li>
+                        <li><strong>Tablet</strong>: 768px wide viewport.</li>
+                        <li><strong>Mobile</strong>: 390px wide viewport.</li>
+                        <li><strong>Width</strong>: enter a custom width from 320px to 1920px to inspect responsive
+                            breakpoints as the page updates.</li>
+                        <li><strong>Zoom</strong>: scale the preview from 50% to 125% without changing its viewport
+                            width.</li>
+                    </ul>
+
+                    <h3>Preview actions</h3>
+                    <ul>
+                        <li><strong>Reload</strong>: re-renders the current preview.</li>
+                        <li><strong>Open</strong>: launches the current result in a separate browser tab.</li>
+                        <li><strong>Fullscreen</strong>: expands the preview area for focused inspection.</li>
+                    </ul>
+                </section>
+
+                <section id="console-docs" class="docs-section">
+                    <h2>Console</h2>
+                    <p>
+                        The console captures log output from the live project, including warnings and runtime errors.
+                        This is
+                        useful for debugging front-end behaviour and verifying that scripts are executing as expected.
+                    </p>
+
+                    <ul>
+                        <li>Use the filter buttons to focus on logs, warnings, or errors.</li>
+                        <li>Clear the console to remove previous output.</li>
+                        <li>Click an error entry to jump to its source area when available.</li>
+                    </ul>
+                </section>
+
+                <section id="export-docs" class="docs-section">
+                    <h2>Export</h2>
+                    <p>
+                        Use <strong>Export</strong> in the top bar to download a standalone HTML document with project
+                        CSS, JavaScript, and uploaded assets embedded, or a static ZIP containing the project files and
+                        assets in an <code>assets/</code> folder.
+                    </p>
+                </section>
+
+                <section id="shortcuts" class="docs-section">
+                    <h2>Keyboard Shortcuts</h2>
+                    <ul>
+                        <li><code>Ctrl/Cmd + S</code>: save project</li>
+                        <li><code>Ctrl/Cmd + Enter</code>: refresh preview</li>
+                        <li><code>Ctrl/Cmd + F</code>: search within the active file</li>
+                        <li><code>Shift + Alt + F</code>: format the active document</li>
+                        <li><code>Tab</code>: indent selections</li>
+                    </ul>
+                </section>
+
+                <section id="troubleshooting" class="docs-section">
+                    <h2>Troubleshooting</h2>
+                    <ul>
+                        <li>If the preview is stale, refresh the preview or click the Reload button.</li>
+                        <li>If an asset does not appear, confirm the file is uploaded and referenced correctly.</li>
+                        <li>If a script fails, read the console output and check the relevant file and line.</li>
+                        <li>If a change does not seem saved, confirm the Save indicator is in the saved state.</li>
+                    </ul>
+
+                    <p>
+                        Buildzen Studio is designed to keep the editing and preview loop fast, simple, and close
+                        together so
+                        you can stay focused on building a working interface.
+                    </p>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
