@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bleatz — Wireless Shopping List</title>
+<style>
+:root{color-scheme:light;--bg:#f4f6fb;--card:#fff;--text:#172033;--muted:#637089;--line:#e2e7f0;--accent:#4f46e5;--soft:#eef2ff;--good:#137547}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:960px;margin:auto;padding:28px 18px 48px}header{margin-bottom:22px}.eyebrow{font-size:.76rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.04em;margin:6px 0 8px}.sub{margin:0;color:var(--muted);max-width:680px}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.metric,.item,.notes{background:var(--card);border:1px solid var(--line);border-radius:16px}.metric{padding:17px}.metric span{display:block;color:var(--muted);font-size:.86rem}.metric strong{font-size:1.65rem;display:block;margin-top:3px}.green{color:var(--good)}
+.bar{height:9px;background:#e4e8f1;border-radius:99px;overflow:hidden;margin-top:-10px;margin-bottom:22px}.bar div{height:100%;width:90.44%;background:var(--accent)}
+.items{display:grid;gap:14px}.item{padding:20px;display:grid;grid-template-columns:48px 1fr auto;gap:15px;align-items:start}.num{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:var(--soft);color:var(--accent);font-weight:800}
+h2{font-size:1.17rem;margin:0 0 5px}.tag{display:inline-block;font-size:.76rem;padding:3px 9px;border-radius:999px;background:#f0f3f8;color:#4d5a70;margin:3px 5px 5px 0}
+.price{text-align:right;white-space:nowrap;font-size:1.1rem;font-weight:800}.price small{display:block;color:var(--muted);font-size:.75rem;font-weight:500}
+ul{padding-left:20px;margin:10px 0 0}li{margin:4px 0}.links{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}a.link{display:inline-block;padding:8px 11px;border:1px solid #d9def0;border-radius:9px;color:var(--accent);text-decoration:none;font-size:.9rem;font-weight:650}a.link:hover{background:var(--soft)}
+.notes{padding:19px 21px;margin-top:18px}.notes h2{margin-bottom:8px}.foot{font-size:.84rem;color:var(--muted);margin-top:17px}
+@media(max-width:650px){.summary{grid-template-columns:1fr}.item{grid-template-columns:42px 1fr;gap:12px;padding:16px}.num{width:40px;height:40px}.price{grid-column:2;text-align:left}.price small{display:inline;margin-left:5px}}
+@media print{body{background:#fff}main{max-width:none;padding:0}.item,.metric,.notes{break-inside:avoid}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">Personal tech shopping plan</div><h1>Bleatz Wireless Shopping List</h1>
+<p class="sub">Updated for wireless gaming accessories, with a ₹11,000 cap. RAM and a domain are not wireless products; the gamepad and headset are selected for wireless use.</p></header>
+
+<section class="summary" aria-label="Budget summary">
+<div class="metric"><span>Total budget</span><strong>₹11,000</strong></div>
+<div class="metric"><span>Estimated spend</span><strong>₹9,948</strong></div>
+<div class="metric"><span>Estimated remaining</span><strong class="green">₹1,052</strong></div>
+</section><div class="bar" aria-label="About 90 percent of budget planned"><div></div></div>
+
+<section class="items">
+<article class="item"><div class="num">01</div><div>
+<h2>8 GB DDR4-3200 SO-DIMM RAM</h2><span class="tag">Internal memory</span><span class="tag">Laptop-size module</span>
+<ul>
+<li><b>Capacity:</b> 8 GB</li><li><b>Type:</b> DDR4 SO-DIMM, 260-pin</li><li><b>Speed:</b> 3200 MT/s</li><li><b>Voltage:</b> 1.2 V</li><li><b>Existing module:</b> Samsung M471A1K43EB1-CWE, 8 GB DDR4-3200</li><li><b>Expected total:</b> 16 GB if the system supports the added module.</li>
+</ul><p><b>Before buying:</b> Your firmware reports DIMM0 occupied, DIMM1 empty, and 32 GB maximum. Verify your exact HP model supports the module. Buy SO-DIMM, not full-size desktop UDIMM.</p>
+</div><div class="price">₹4,350<small>budget estimate</small></div></article>
+
+<article class="item"><div class="num">02</div><div>
+<h2>PowerA OPS v1 Wireless Controller</h2><span class="tag">2.4 GHz USB receiver</span><span class="tag">Bluetooth</span><span class="tag">Hall-effect sticks/triggers</span>
+<ul>
+<li>Includes low-latency 2.4 GHz wireless and Bluetooth connectivity; USB cable is optional for charging or wired use.</li><li>Rechargeable battery, extra programmable buttons, and trigger locks.</li><li>Good feature set for the price; listed around ₹2,399 in an Indian price tracker.</li><li><b>Arch Linux note:</b> official PC support focuses on Windows. Check return policy and test controller detection/game input on Arch before treating Linux compatibility as guaranteed.</li>
+</ul><div class="links"><a class="link" href="https://www.amazon.in/s?k=PowerA+OPS+v1+Wireless+Controller" target="_blank" rel="noopener noreferrer">Check current listings</a><a class="link" href="https://www.powera.com/p/pc/controllers/wireless/ops-v1-wireless-controller-for-pc-and-cloud-gaming-pcgp0381-01/" target="_blank" rel="noopener noreferrer">Manufacturer specifications</a></div>
+</div><div class="price">₹2,399<small>price estimate</small></div></article>
+
+<article class="item"><div class="num">03</div><div>
+<h2>Cosmic Byte Immortal Wireless Headset</h2><span class="tag">2.4 GHz USB dongle</span><span class="tag">Bluetooth 5.3</span><span class="tag">Detachable microphone</span>
+<ul>
+<li>Can connect wirelessly using the included 2.4 GHz dongle or Bluetooth; wired mode is also available but isn't required for everyday use.</li><li>Manufacturer manual lists up to 40 hours of battery life, a 1000 mAh battery, and up to 20 m unobstructed range.</li><li>50 mm drivers and detachable microphone.</li><li>Use 2.4 GHz dongle mode for gaming when low latency matters; Bluetooth is convenient for general listening.</li><li>Confirm stock, delivery date, and warranty. The official store listing currently shows ₹2,999 and a pre-order shipping date, so availability may affect your plan.</li>
+</ul><div class="links"><a class="link" href="https://www.thecosmicbyte.com/product/cosmic-byte-immortal-2-4ghz-wireless-bluetooth-wired-headset-with-thx-spatial-audio-upgraded/" target="_blank" rel="noopener noreferrer">Official product page</a></div>
+</div><div class="price">₹2,999<small>official listing estimate</small></div></article>
+
+<article class="item"><div class="num">04</div><div>
+<h2>bleatz.xyz — domain name</h2><span class="tag">1-year registration</span><span class="tag">Bleatz brand</span>
+<ul>
+<li><b>Selected name:</b> <code>bleatz.xyz</code></li><li><b>Registrar to check:</b> Dynadot</li><li>You confirmed the domain is available; availability and price can change before checkout.</li><li>Choose 1 year and check the final checkout price, renewal fee, taxes, privacy options, and any add-ons.</li><li>A domain does not include web hosting or email hosting by default.</li></ul>
+<div class="links"><a class="link" href="https://www.dynadot.com/domain/search?domain=bleatz.xyz" target="_blank" rel="noopener noreferrer">Check/register bleatz.xyz</a></div>
+</div><div class="price">₹200<small>budget estimate</small></div></article>
+</section>
+
+<section class="notes"><h2>Budget breakdown</h2>
+<ul><li>8 GB RAM: ₹4,350</li><li>PowerA OPS v1 wireless controller: ₹2,399</li><li>Cosmic Byte Immortal wireless headset: ₹2,999</li><li>bleatz.xyz domain: ₹200</li></ul>
+<p><b>Estimated total: ₹9,948</b> of ₹11,000, leaving ₹1,052 for delivery, taxes, or price changes.</p>
+<p>For gaming, prefer the headset's 2.4 GHz USB receiver over Bluetooth when possible. The headset's charging cable is only for charging; the controller may also need its cable to recharge. “Wireless” means no cable during use, not that devices never need charging.</p></section>
+<p class="foot">Prices and availability are estimates from listings and may change. Confirm exact model, checkout total, return terms, warranty, and Arch Linux compatibility before buying.</p>
+</main></body></html>
